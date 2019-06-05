@@ -1,5 +1,6 @@
 import React from 'react';
 import TodoList from './components/TodoComponents/TodoList';
+import ToDoForm from './components/TodoComponents/TodoForm';
 
 // Your todo list should display a list of todos, an input field, a submit button, and a clear all button.
 
@@ -42,7 +43,10 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <TodoList todolist={this.state.todoOnState} />
+        <div>
+          <TodoList todolist={this.state.todoOnState} />
+          <ToDoForm newToDo={this.state.newToDo} />
+        </div>
       </div>
     );
   }
