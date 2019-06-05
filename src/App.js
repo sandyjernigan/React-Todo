@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { Component } from "react";
 import TodoList from './components/TodoComponents/TodoList';
-import ToDoForm from './components/TodoComponents/TodoForm';
+// import ToDoForm from './components/TodoComponents/TodoForm';
 
 // Your todo list should display a list of todos, an input field, a submit button, and a clear all button.
 
@@ -9,7 +9,7 @@ const toDoList = [
   {
       task: 'Organize Garage', 
       id: 1528817077286, 
-      completed: false // 
+      completed: false
   }, 
   {
       task: 'Bake Cookies',
@@ -19,8 +19,8 @@ const toDoList = [
 ]
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       todoOnState: toDoList,
       task: '',         // todo title
@@ -31,11 +31,21 @@ class App extends React.Component {
 
   // Handler Functions
   changeHandler = event => {
-    this.setState({ [event.target.task]: event.target.value });
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   submitHandler = event => {
     event.preventDefault();
+    const newToDo = {
+      task: this.state.task, 
+      id: this.state.id, 
+      completed: false
+    }
+
+    this.setState({
+      todoOnState: [...this.state.todoOnState, newToDo]
+    });
+    toDoList.push(newToDo);
   };
 
   render() {
@@ -44,7 +54,17 @@ class App extends React.Component {
         <h2>Welcome to your Todo App!</h2>
         <div className="todolist">
           <TodoList todolist={this.state.todoOnState} />
-          <ToDoForm newToDo={this.state.task} />
+
+          <form onSubmit={this.submitHandler} class="todoform">
+            <input type="text" placeholder="...todo" 
+              name="task" 
+              value={this.state.task}
+              onChange={this.changeHandler} 
+            /> 
+            <button type="submit">Add Todo</button> 
+            <button>Clear Completed</button>
+          </form>
+
         </div>
       </div>
     );
@@ -52,3 +72,4 @@ class App extends React.Component {
 }
 
 export default App;
+// <ToDoForm newToDo={this.state.task} />

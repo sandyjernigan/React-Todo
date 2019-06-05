@@ -5,9 +5,9 @@ import React from 'react';
 
 function ToDoForm(props) {
     return (
-      <form class="todoform">
-          <input placeholder="...todo" value={props.newToDo.item} />
-      </form>
+        <input placeholder="...todo" value={props.newToDo.task} /> 
+        <button>Add Todo</button> 
+        <button>Clear Completed</button>
     );
 }
 export default ToDoForm;
