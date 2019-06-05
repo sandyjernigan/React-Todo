@@ -43,7 +43,7 @@ class App extends React.Component {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
-        <div>
+        <div class="todolist">
           <TodoList todolist={this.state.todoOnState} />
           <ToDoForm newToDo={this.state.newToDo} />
         </div>

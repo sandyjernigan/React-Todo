@@ -7,7 +7,7 @@ import Todo from './Todo';
     
 function TodoList(props) {
     return (
-        <ul class="todolist">
+        <ul>
             {props.todolist.map(item => {
                 return <Todo toDo={item} />; })}
         </ul>
