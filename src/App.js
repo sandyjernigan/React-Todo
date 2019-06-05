@@ -23,33 +23,28 @@ class App extends React.Component {
     super();
     this.state = {
       todoOnState: toDoList,
-      newToDo: {
-        task: '',         // todo title
-        id: '',           // Unique Time Stamp that will be assigned by Date.now()
-        completed: false  // default to false and will be the field that we toggle when we complete a todo.
-      }
+      task: '',         // todo title
+      id: '',           // Unique Time Stamp that will be assigned by Date.now()
+      completed: false  // default to false and will be the field that we toggle when we complete a todo.
     };
   }
 
-  // handler functions
+  // Handler Functions
   changeHandler = event => {
     this.setState({ [event.target.task]: event.target.value });
   };
 
-  updateList = () => {
-    this.setState({
-      newToDo: {
-        ...this.state.newToDo
-      }})
-  }
-  
+  submitHandler = event => {
+    event.preventDefault();
+  };
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <div className="todolist">
           <TodoList todolist={this.state.todoOnState} />
-          <ToDoForm newToDo={this.state.newToDo} />
+          <ToDoForm newToDo={this.state.task} />
         </div>
       </div>
     );
