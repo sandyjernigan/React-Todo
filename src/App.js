@@ -67,6 +67,8 @@ class App extends React.Component {
             <button>Clear Completed</button>
           </form>
 
+          {/* New Branch to expand on getting form and clear button working */}
+
           {/* <ToDoForm 
             task={this.state.task} 
             submitHandler={() => this.submitHandler()} 
