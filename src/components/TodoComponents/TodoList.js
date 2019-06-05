@@ -7,12 +7,14 @@ import ToDoItem from './Todo';
 // Array for ToDoList
 const toDoList = [
     {
-        item: "Learn setState",
-        isChecked: false
+        task: 'Organize Garage',
+        id: 1528817077286,
+        completed: false
     }, 
     {
-        item: "Style my Todo List",
-        isChecked: false
+        task: 'Bake Cookies',
+        id: 1528817084358,
+        completed: false
     }
   ]
 
