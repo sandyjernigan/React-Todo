@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import TodoList from './components/TodoComponents/TodoList';
-// import ToDoForm from './components/TodoComponents/TodoForm';
+import ToDoForm from './components/TodoComponents/TodoForm';
 
 // Your todo list should display a list of todos, an input field, a submit button, and a clear all button.
 
@@ -27,6 +27,8 @@ class App extends React.Component {
       id: '',           // Unique Time Stamp that will be assigned by Date.now()
       completed: false  // default to false and will be the field that we toggle when we complete a todo.
     };
+    this.changeHandler = this.changeHandler.bind(this);
+    this.submitHandler = this.submitHandler.bind(this);
   }
 
   // Handler Functions
@@ -38,7 +40,7 @@ class App extends React.Component {
     event.preventDefault();
     const newToDo = {
       task: this.state.task, 
-      id: this.state.id, 
+      id: Date.now(), 
       completed: false
     }
 
@@ -65,6 +67,12 @@ class App extends React.Component {
             <button>Clear Completed</button>
           </form>
 
+          {/* <ToDoForm 
+            task={this.state.task} 
+            submitHandler={() => this.submitHandler()} 
+            changeHandler={() => this.changeHandler()} 
+          /> */}
+
         </div>
       </div>
     );
@@ -72,4 +80,3 @@ class App extends React.Component {
 }
 
 export default App;
-// <ToDoForm newToDo={this.state.task} />
