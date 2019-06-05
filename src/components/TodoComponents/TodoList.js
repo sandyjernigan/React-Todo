@@ -27,7 +27,7 @@ class ToDoDisplay extends React.Component {
     render() {
         return (
             <div class="todolist">
-                {toDoList.map(item => {
+                {this.state.todoOnState.map(item => {
                     return <ToDoItem toDo={item} />;
                 })}
 
