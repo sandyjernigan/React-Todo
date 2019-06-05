@@ -20,18 +20,31 @@ class ToDoDisplay extends React.Component {
     constructor() {
         super();
         this.state = {
-            todoOnState: toDoList
+            todoOnState: toDoList,
+            newToDo: {
+                item: "Learn React",
+                isChecked: false
+            }
         }
-
     }
+
+    updateList = () => {
+        this.setState({
+            newToDo: {
+                ...this.state.newToDo
+            }
+        })
+    }
+
     render() {
         return (
             <div class="todolist">
+                {/* Display List of To Do items */}
                 {this.state.todoOnState.map(item => {
                     return <ToDoItem toDo={item} />;
                 })}
 
-                <ToDoForm />
+                <ToDoForm item={this.state.newToDo.item} />
             </div>
         );
     }

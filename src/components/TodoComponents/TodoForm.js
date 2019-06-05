@@ -1,11 +1,11 @@
 import React from 'react';
 
 // Component for the ToDoList Form
-
-const ToDoForm = () => {
+function ToDoForm(props) {
     return (
-      <div class="todoform">
-      </div>
+      <form class="todoform">
+          <input placeholder="...todo" value={props.item} />
+      </form>
     );
 }
 export default ToDoForm;
