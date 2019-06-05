@@ -2,10 +2,9 @@ import React from 'react';
 
 // Component for the individual todo Items
 
-const ToDoItem = () => {
+function ToDoItem(props) {
     return (
-      <div class="todolist">
-      </div>
+      <li>{props.toDo.item}</li>
     );
 }
 export default ToDoItem;
