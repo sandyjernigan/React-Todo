@@ -44,7 +44,7 @@ class ToDoDisplay extends React.Component {
                     return <ToDoItem toDo={item} />;
                 })}
 
-                <ToDoForm item={this.state.newToDo.item} />
+                <ToDoForm newToDo={this.state.newToDo} />
             </div>
         );
     }

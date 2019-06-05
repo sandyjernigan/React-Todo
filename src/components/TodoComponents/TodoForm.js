@@ -4,7 +4,7 @@ import React from 'react';
 function ToDoForm(props) {
     return (
       <form class="todoform">
-          <input placeholder="...todo" value={props.item} />
+          <input placeholder="...todo" value={props.newToDo.item} />
       </form>
     );
 }
