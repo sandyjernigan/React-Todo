@@ -66,6 +66,10 @@ class App extends React.Component {
             toggleTodo={this.toggleTodo}
           />
           <TodoForm addTodo={this.addTodo} />
+          
+          <br />
+          
+          <button>Clear Completed</button>
 
         </div>
       </div>

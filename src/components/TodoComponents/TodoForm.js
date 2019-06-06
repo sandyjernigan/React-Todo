@@ -30,7 +30,6 @@ class TodoForm extends React.Component {
                     onChange={this.changeHandler} 
                 /> 
                 <button type="submit">Add Todo</button> 
-                <button>Clear Completed</button>
             </form>
         );
     }
