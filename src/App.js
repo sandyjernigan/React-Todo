@@ -1,6 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+import './components/TodoComponents/Todo.css';
 
 // Your todo list should display a list of todos, an input field, a submit button, and a clear all button.
 
@@ -39,26 +40,31 @@ class App extends React.Component {
       todoOnState: [...this.state.todoOnState, newToDo] });
   }
 
+  toggleTodo = id => {
+    console.log(id);
+    const newToDoList = this.state.todoOnState.map(task => {
+      if (task.id === id) {
+        const newTask = {
+          ...task,
+          completed: !task.completed
+        };
+        return newTask;
+      } else {
+        return task;
+      }});
+
+      this.setState({ todoOnState: newToDoList });
+  }
+
   render() {
     return (
       <div>
         <h2>Welcome to your Todo App!</h2>
         <div className="todolist">
-          <TodoList todolist={this.state.todoOnState} />
-
-          {/* <form onSubmit={this.submitHandler} class="todoform">
-            <input type="text" placeholder="...todo" 
-              name="task" 
-              value={this.state.task}
-              onChange={this.changeHandler} 
-            /> 
-            <button type="submit">Add Todo</button> 
-          </form>
-          <br />
-            <button>Clear Completed</button> */}
-
-          {/* New Branch to expand on getting form and clear button working */}
-
+          <TodoList 
+            todolist={this.state.todoOnState} 
+            toggleTodo={this.toggleTodo}
+          />
           <TodoForm addTodo={this.addTodo} />
 
         </div>

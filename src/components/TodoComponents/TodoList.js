@@ -10,8 +10,13 @@ function TodoList(props) {
         <div>
             <h3>Todo List</h3>
             <ul>
-                {props.todolist.map(item => {
-                    return <Todo toDo={item} />; })}
+                {props.todolist.map(toDo => {
+                    return (
+                    <Todo toDo={toDo} 
+                        toggleTodo={props.toggleTodo}
+                        key={toDo.id}
+                    /> 
+                );})}
             </ul>
         </div>
     );
