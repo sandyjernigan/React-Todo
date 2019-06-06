@@ -55,8 +55,14 @@ class App extends React.Component {
       this.setState({ todoOnState: newToDoList });
   }
 
-  clearTodo = toDoObj => {
-    
+  clearTodo = () => {
+    const newToDoList = this.state.todoOnState.map(task => {
+      if (task.completed === false) {
+        const newTask = { ...task };
+        return newTask;
+      }});
+
+      this.setState({ todoOnState: newToDoList });
   }
 
   render() {
@@ -72,7 +78,7 @@ class App extends React.Component {
           
           <br />
           
-          <button>Clear Completed</button>
+          <button onClick={this.clearTodo}>Clear Completed</button>
 
         </div>
       </div>
