@@ -41,7 +41,6 @@ class App extends React.Component {
   }
 
   toggleTodo = id => {
-    console.log(id);
     const newToDoList = this.state.todoOnState.map(task => {
       if (task.id === id) {
         const newTask = {
@@ -54,6 +53,10 @@ class App extends React.Component {
       }});
 
       this.setState({ todoOnState: newToDoList });
+  }
+
+  clearTodo = toDoObj => {
+    
   }
 
   render() {
