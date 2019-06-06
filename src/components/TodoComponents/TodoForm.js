@@ -7,23 +7,26 @@ class TodoForm extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            todoOnState: '',
-            task: '',         // todo title
-            id: '',           // Unique Time Stamp that will be assigned by Date.now()
-            completed: false  // default to false and will be the field that we toggle when we complete a todo.
+            task: ''
         };
     }
     
     changeHandler = event => {
         this.setState({ task: event.target.value });
-      };
+    };
+
+    submitHandler = event => {
+        event.preventDefault();
+        this.props.addTodo(this.state.task);
+        this.setState({ task: '' });
+    };
 
     render() {
         return (
-            <form onSubmit={this.submitHandler} className="todoform">
+            <form onSubmit={this.submitHandler}>
                 <input type="text" placeholder="...todo" 
                     name="task" 
-                    value=''
+                    value={this.state.task}
                     onChange={this.changeHandler} 
                 /> 
                 <button type="submit">Add Todo</button> 
@@ -34,26 +37,3 @@ class TodoForm extends React.Component {
 }
 
 export default TodoForm;
-
-// import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-
-// function mapStateToProps(state) {
-//     return {
-
-//     };
-// }
-
-// class TodoForm extends Component {
-//     render() {
-//         return (
-//             <div>
-                
-//             </div>
-//         );
-//     }
-// }
-
-// export default connect(
-//     mapStateToProps,
-// )(TodoForm);

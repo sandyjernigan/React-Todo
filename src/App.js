@@ -27,36 +27,17 @@ class App extends React.Component {
       id: '',           // Unique Time Stamp that will be assigned by Date.now()
       completed: false  // default to false and will be the field that we toggle when we complete a todo.
     };
-    // this.changeHandler = this.changeHandler.bind(this);
-    // this.submitHandler = this.submitHandler.bind(this);
   }
 
-  addTodo = (item) => {
+  addTodo = newtask => {
     const newToDo = {
-      task: this.state.task, 
+      task: newtask, 
       id: Date.now(), 
       completed: false
     }
+    this.setState({
+      todoOnState: [...this.state.todoOnState, newToDo] });
   }
-
-  // // Handler Functions
-  // changeHandler = event => {
-  //   this.setState({ [event.target.name]: event.target.value });
-  // };
-
-  // submitHandler = event => {
-  //   event.preventDefault();
-  //   const newToDo = {
-  //     task: this.state.task, 
-  //     id: Date.now(), 
-  //     completed: false
-  //   }
-
-  //   this.setState({
-  //     todoOnState: [...this.state.todoOnState, newToDo]
-  //   });
-  //   toDoList.push(newToDo);
-  // };
 
   render() {
     return (
@@ -78,7 +59,7 @@ class App extends React.Component {
 
           {/* New Branch to expand on getting form and clear button working */}
 
-          <TodoForm task={this.state.task} />
+          <TodoForm addTodo={this.addTodo} />
 
         </div>
       </div>
