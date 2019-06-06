@@ -7,10 +7,13 @@ import Todo from './Todo';
     
 function TodoList(props) {
     return (
-        <ul>
-            {props.todolist.map(item => {
-                return <Todo toDo={item} />; })}
-        </ul>
+        <div>
+            <h3>Todo List</h3>
+            <ul>
+                {props.todolist.map(item => {
+                    return <Todo toDo={item} />; })}
+            </ul>
+        </div>
     );
 }
 
