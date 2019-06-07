@@ -57,13 +57,8 @@ class App extends React.Component {
 
   clearTodo = () => {
     console.log('Clicked Clear.');
-    const newToDoList = this.state.todoOnState.map(task => {
-      if (task.completed === false) {
-        const newTask = { ...task };
-        return newTask;
-      }});
-
-      this.setState({ todoOnState: newToDoList });
+    const newToDoList = this.state.todoOnState.filter(task => task.completed === false);
+    this.setState({ todoOnState: newToDoList });
   }
 
   render() {

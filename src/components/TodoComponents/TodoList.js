@@ -11,9 +11,10 @@ function TodoList(props) {
             <h3>Todo List</h3>
             <ul>
                 {props.todolist.map(toDo => {
-                    console.log({toDo});
+                    console.log(toDo.task);
+                    console.log(toDo.id);
                     return (
-                    <Todo toDo={toDo} 
+                    <Todo toDo={toDo} key={toDo.id}
                         toggleTodo={props.toggleTodo}
                     />
                 );})}
