@@ -1,4 +1,5 @@
 import React from "react";
+import Background from './components/backgroundStyle/bg';
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
 import './components/TodoComponents/Todo.css';
@@ -64,18 +65,21 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h2>Welcome to your Todo App!</h2>
-        <div className="todolist">
-          <TodoList 
-            todolist={this.state.todoOnState} 
-            toggleTodo={this.toggleTodo}
-          />
-          <TodoForm addTodo={this.addTodo} />
-          
-          <br />
-          
-          <button onClick={this.clearTodo}>Clear Completed</button>
+        <Background />
+        <div className="main">
+          <h2>Welcome to your Todo App!</h2>
+          <div className="todolist">
+            <TodoList 
+              todolist={this.state.todoOnState} 
+              toggleTodo={this.toggleTodo}
+            />
+            <TodoForm addTodo={this.addTodo} />
+            
+            <br />
+            
+            <button onClick={this.clearTodo}>Clear Completed</button>
 
+          </div>
         </div>
       </div>
     );

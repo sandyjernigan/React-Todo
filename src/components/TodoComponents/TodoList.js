@@ -11,8 +11,6 @@ function TodoList(props) {
             <h3>Todo List</h3>
             <ul>
                 {props.todolist.map(toDo => {
-                    console.log(toDo.task);
-                    console.log(toDo.id);
                     return (
                     <Todo toDo={toDo} key={toDo.id}
                         toggleTodo={props.toggleTodo}
@@ -24,4 +22,3 @@ function TodoList(props) {
 }
 
 export default TodoList;
-// key={toDo.id}
