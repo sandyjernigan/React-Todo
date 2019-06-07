@@ -20,6 +20,12 @@ const toDoList = [
   }
 ]
 
+let toDoStored = localStorage.getItem('toDoStore');
+let toDoStore = [];
+console.log(toDoStored !== null ? console.log('toDoStored') : console.log('toDoList'));
+localStorage.removeItem('toDoStored');
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -37,8 +43,13 @@ class App extends React.Component {
       id: Date.now(), 
       completed: false
     }
+    console.log(newToDo);
+
     this.setState({
       todoOnState: [...this.state.todoOnState, newToDo] });
+      console.log(this.state.todoOnState);
+      localStorage.setItem('toDoStore', this.state.todoOnState);
+      console.log(localStorage.getItem('toDoStore'))
   }
 
   toggleTodo = id => {

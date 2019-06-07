@@ -70,16 +70,16 @@ button {
     cursor: pointer;
     outline: none;
     color: #fff;
-    background-color: #4CAF50;
+    background-color: #4e54c8;
     border: none;
     border-radius: 15px;
     box-shadow: 0 5px #999;
 }
   
-button:hover {background-color: #3e8e41}
+button:hover {background-color: #3e43a1}
   
 button:active {
-    background-color: #3e8e41;
+    background-color: #3e43a1;
     box-shadow: 0 2px #666;
     transform: translateY(4px);
 }
