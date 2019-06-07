@@ -10,7 +10,7 @@ function Todo(props) {
 
     return (
         <li 
-            className={`${props.toDo.completed ? "completed" : ""}`} 
+            className={`task ${props.toDo.completed ? " completed" : ""}`} 
             onClick={clickHandler} 
         >
             {props.toDo.task}
