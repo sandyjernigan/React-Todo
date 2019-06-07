@@ -8,7 +8,6 @@ import Todo from './Todo';
 function TodoList(props) {
     return (
         <div>
-            <h3>Todo List</h3>
             <ul>
                 {props.todolist.map(toDo => {
                     return (

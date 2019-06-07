@@ -67,7 +67,7 @@ class App extends React.Component {
       <div>
         <Background />
         <div className="main">
-          <h2>Welcome to your Todo App!</h2>
+          <h2>Honey Do ... To Do List!</h2>
           <div className="todolist">
             <TodoList 
               todolist={this.state.todoOnState} 

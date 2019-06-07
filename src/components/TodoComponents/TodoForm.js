@@ -23,7 +23,7 @@ class TodoForm extends React.Component {
 
     render() {
         return (
-            <form onSubmit={this.submitHandler}>
+            <form onSubmit={this.state.task != '' ? this.submitHandler : null}>
                 <input type="text" placeholder="...todo" 
                     name="task" 
                     value={this.state.task}
