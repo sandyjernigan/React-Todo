@@ -21,9 +21,13 @@ class TodoForm extends React.Component {
         this.setState({ task: '' });
     };
 
+    noChange = event => {
+        event.preventDefault();
+    };
+
     render() {
         return (
-            <form onSubmit={this.state.task !== '' ? this.submitHandler : null}>
+            <form onSubmit={this.state.task !== '' ? this.submitHandler : this.noChange}>
                 <input type="text" placeholder="...todo" 
                     name="task" 
                     value={this.state.task}
